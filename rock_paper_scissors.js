@@ -35,10 +35,6 @@ function playRound(playerSelection, computerSelection) {
         return "You lose! Rock beats Scissors"
     }
 }
-// const playerSelection = "rock";
-// const computerSelection = getComputerChoice();
-// // console.log(computerSelection);
-// console.log(playRound(playerSelection, computerSelection));
 
 function playGame(){
     let playerSelection;
