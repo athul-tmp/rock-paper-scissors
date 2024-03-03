@@ -14,14 +14,6 @@ function playRound(playerSelection, computerSelection) {
         userScore++;
         return "You win! Rock beats Scissors"
     }
-    if (playerSelection === "rock" && computerSelection === "paper") {
-        computerScore++;
-        return "You lose! Paper beats Rock"
-    }
-    if (playerSelection === "paper" && computerSelection === "scissors") {
-        computerScore++;
-        return "You lose! Scissors beats Paper"
-    }
     if (playerSelection === "paper" && computerSelection === "rock") {
         userScore++;
         return "You win! Paper beats Rock"
@@ -30,9 +22,17 @@ function playRound(playerSelection, computerSelection) {
         userScore++;
         return "You win! Scissors beats Paper"
     }
+    if (playerSelection === "rock" && computerSelection === "paper") {
+        computerScore++;
+        return "You lose! Rock is beaten by Paper"
+    }
+    if (playerSelection === "paper" && computerSelection === "scissors") {
+        computerScore++;
+        return "You lose! Paper is beaten by Scissors"
+    }
     if (playerSelection === "scissors" && computerSelection === "rock") {
         computerScore++;
-        return "You lose! Rock beats Scissors"
+        return "You lose! Scissors is beaten by Rock"
     }
 }
 
