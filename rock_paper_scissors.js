@@ -39,15 +39,16 @@ function playRound(playerSelection, computerSelection) {
 function playGame(){
     let playerSelection;
     let computerSelection;
-    for (let i = 1; i < 6; i++) {
-        playerSelection = prompt("Rock, Paper, or Scissors?:")
-        playerSelection = playerSelection.toLowerCase();
-        computerSelection = getComputerChoice();
-        console.log("Round = " + i);
-        console.log("Your choice: " + playerSelection + ", Computer's choice: " + computerSelection);
-        console.log(playRound(playerSelection, computerSelection));
-        console.log("Your score: " + userScore + ", Computer's score: " + computerScore);
-    }
+    // for (let i = 1; i < 6; i++) {
+    //     playerSelection = prompt("Rock, Paper, or Scissors?:")
+    //     playerSelection = playerSelection.toLowerCase();
+    //     computerSelection = getComputerChoice();
+    //     console.log("Round = " + i);
+    //     console.log("Your choice: " + playerSelection + ", Computer's choice: " + computerSelection);
+    //     console.log(playRound(playerSelection, computerSelection));
+    //     console.log("Your score: " + userScore + ", Computer's score: " + computerScore);
+    // }
+    
     if (userScore > computerScore) {
         console.log("You won the game!")
     }
