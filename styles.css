@@ -19,7 +19,20 @@ button {
     height: 150px;
     font-size: 100px;
 }
-
+.text {
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.points {
+    margin: 50px 0 50px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .choices {
     display: flex;
     justify-content: center;

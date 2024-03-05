@@ -1,5 +1,5 @@
 let hand = ["rock", "paper", "scissors"];
-let userScore = 0;
+let playerScore = 0;
 let computerScore = 0;
 
 function getComputerChoice() {
@@ -11,15 +11,15 @@ function playRound(playerSelection, computerSelection) {
         return "It's a tie!";
     }
     if (playerSelection === "rock" && computerSelection === "scissors") {
-        userScore++;
+        playerScore++;
         return "You win! Rock beats Scissors"
     }
     if (playerSelection === "paper" && computerSelection === "rock") {
-        userScore++;
+        playerScore++;
         return "You win! Paper beats Rock"
     }
     if (playerSelection === "scissors" && computerSelection === "paper") {
-        userScore++;
+        playerScore++;
         return "You win! Scissors beats Paper"
     }
     if (playerSelection === "rock" && computerSelection === "paper") {
@@ -39,26 +39,31 @@ function playRound(playerSelection, computerSelection) {
 function playGame(){
     let playerSelection;
     let computerSelection;
-    // for (let i = 1; i < 6; i++) {
-    //     playerSelection = prompt("Rock, Paper, or Scissors?:")
-    //     playerSelection = playerSelection.toLowerCase();
-    //     computerSelection = getComputerChoice();
-    //     console.log("Round = " + i);
-    //     console.log("Your choice: " + playerSelection + ", Computer's choice: " + computerSelection);
-    //     console.log(playRound(playerSelection, computerSelection));
-    //     console.log("Your score: " + userScore + ", Computer's score: " + computerScore);
-    // }
     
-    if (userScore > computerScore) {
-        console.log("You won the game!")
-    }
-    else if (computerScore > userScore) {
-        console.log("You lost the game. Good luck next time!")
-    }
-    else {
-        console.log("The game is tied!")
-    }
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            playerSelection = button.id
+            computerSelection = getComputerChoice()
+            const outcome = document.querySelector(".text > h2")
+            outcome.textContent = playRound(playerSelection, computerSelection)
+            const points = document.querySelector(".points")
+            points.firstElementChild.textContent = "Your points: " + playerScore 
+            points.lastElementChild.textContent = "Computer's points: " + computerScore 
 
+            if (computerScore == 5) {
+            buttons.forEach((button) => {button.disabled = true});
+
+            }
+            if (playerScore == 5) {
+            buttons.forEach((button) => {button.disabled = true});
+            }
+          
+        });
+    });
 }
 
 playGame();
+
+
+
