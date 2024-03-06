@@ -42,7 +42,7 @@ function playGame(){
     let playerSelection;
     let computerSelection;
     
-    const buttons = document.querySelectorAll('button');
+    const buttons = document.querySelectorAll('.choices > button');
     buttons.forEach((button) => {
         button.addEventListener('click', () => {
 
@@ -83,10 +83,18 @@ function playGame(){
 
             if (computerScore == 5) {
             buttons.forEach((button) => {button.disabled = true});
-
+            outcome.firstElementChild.textContent = "Oops! You lost the game!"
+            outcome.lastElementChild.textContent = ""
+            
+            const playAgain = document.querySelector(".play-again > button")
+            playAgain.classList.toggle("inactive")
             }
             if (playerScore == 5) {
             buttons.forEach((button) => {button.disabled = true});
+            outcome.firstElementChild.textContent = "Congrats! You won the game!"
+            outcome.lastElementChild.textContent = ""
+            const playAgain = document.querySelector(".play-again > button")
+            playAgain.classList.toggle("inactive")
             }
           
         });
