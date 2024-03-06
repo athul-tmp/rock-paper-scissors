@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="rock_paper_scissors.js" defer></script>
     <link href="styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Micro+5&family=Play:wght@400;700&display=swap" rel="stylesheet">
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <header>ROCK PAPER SCISSORS</header>
+    <header><p>ROCK PAPER SCISSORS</p></header>
 
     <main>
         <div class="text">
@@ -18,12 +22,12 @@
 
         <div class="outcome">
             <div class="user">
-                <h3>Your choice:</h3>
+                <h3 class="choice-text">Your choice:</h3>
                 <p class="choice">?</p>
                 <h3 class="score">Score: 0</h3>
             </div>
             <div class="computer">
-                <h3>Computer's choice:</h3>
+                <h3 class="choice-text">Computer's choice:</h3>
                 <p class="choice">?</p>
                 <h3 class="score">Score: 0</h3>
             </div>
@@ -34,10 +38,14 @@
             <button id="paper">📄</button>
             <button id="scissors">✂️</button>
         </div>
+
+        <div class="play-again">
+            <button class="inactive"><a href="index.html">Play again?</a></button>
+        </div>
     </main>
 
     <footer>
-        Created by Athul <a src="https://github.com/athul-tmp/rock-paper-scissors"></a>
+        <p>Created by Athul <a href="https://github.com/athul-tmp/rock-paper-scissors"><img src="images/github.png" height="25px" width="25px"></a></p> 
     </footer>
 </body>
 </html>
