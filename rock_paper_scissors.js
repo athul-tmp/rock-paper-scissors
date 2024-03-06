@@ -1,12 +1,14 @@
 let hand = ["rock", "paper", "scissors"];
 let playerScore = 0;
 let computerScore = 0;
+let round = 0;
 
 function getComputerChoice() {
     return hand[Math.floor(Math.random() * 3)];
 }
 
 function playRound(playerSelection, computerSelection) {
+    round++;
     if (playerSelection === computerSelection) {
         return "It's a tie!";
     }
@@ -43,13 +45,41 @@ function playGame(){
     const buttons = document.querySelectorAll('button');
     buttons.forEach((button) => {
         button.addEventListener('click', () => {
+
             playerSelection = button.id
             computerSelection = getComputerChoice()
-            const outcome = document.querySelector(".text > h2")
-            outcome.textContent = playRound(playerSelection, computerSelection)
-            const points = document.querySelector(".points")
-            points.firstElementChild.textContent = "Your points: " + playerScore 
-            points.lastElementChild.textContent = "Computer's points: " + computerScore 
+            const outcome = document.querySelector(".text")
+            outcome.firstElementChild.textContent = playRound(playerSelection, computerSelection)
+            outcome.lastElementChild.textContent = "Round: " + round
+
+            if (playerSelection === "rock") {
+                playerSelection = "🪨"
+            }
+            else if (playerSelection === "paper") {
+                playerSelection = "📄"
+            }
+            else {
+                playerSelection = "✂️"
+            }
+
+            if (computerSelection === "rock") {
+                computerSelection = "🪨"
+            }
+            else if (computerSelection === "paper") {
+                computerSelection = "📄"
+            }
+            else {
+                computerSelection = "✂️"
+            }
+            const userChoice = document.querySelector(".user > .choice")
+            userChoice.textContent = playerSelection 
+            const computerChoice = document.querySelector(".computer > .choice")
+            computerChoice.textContent = computerSelection
+
+            const displayedPlayerScore = document.querySelector(".user > .score") 
+            displayedPlayerScore.textContent = "Score: " + playerScore
+            const displayedComputerScore = document.querySelector(".computer > .score") 
+            displayedComputerScore.textContent = "Score: " + computerScore
 
             if (computerScore == 5) {
             buttons.forEach((button) => {button.disabled = true});
