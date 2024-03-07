@@ -53,28 +53,28 @@ function playGame(){
             outcome.lastElementChild.textContent = "Round: " + round
 
             if (playerSelection === "rock") {
-                playerSelection = "🪨"
+                playerSelection = "<img src=\"images/rock.png\" height=\"110px\" width=\"110px\">"
             }
             else if (playerSelection === "paper") {
-                playerSelection = "📄"
+                playerSelection = "<img src=\"images/paper.png\" height=\"110px\" width=\"110px\">"
             }
             else {
-                playerSelection = "✂️"
+                playerSelection = "<img src=\"images/scissors.png\" height=\"110px\" width=\"110px\">"
             }
 
             if (computerSelection === "rock") {
-                computerSelection = "🪨"
+                computerSelection = "<img src=\"images/rock.png\" height=\"110px\" width=\"110px\">"
             }
             else if (computerSelection === "paper") {
-                computerSelection = "📄"
+                computerSelection = "<img src=\"images/paper.png\" height=\"110px\" width=\"110px\">"
             }
             else {
-                computerSelection = "✂️"
+                computerSelection = "<img src=\"images/scissors.png\" height=\"110px\" width=\"110px\">"
             }
             const userChoice = document.querySelector(".user > .choice")
-            userChoice.textContent = playerSelection 
+            userChoice.innerHTML = playerSelection 
             const computerChoice = document.querySelector(".computer > .choice")
-            computerChoice.textContent = computerSelection
+            computerChoice.innerHTML = computerSelection
 
             const displayedPlayerScore = document.querySelector(".user > .score") 
             displayedPlayerScore.textContent = "Score: " + playerScore
@@ -83,16 +83,18 @@ function playGame(){
 
             if (computerScore == 5) {
             buttons.forEach((button) => {button.disabled = true});
-            outcome.firstElementChild.textContent = "Oops! You lost the game!"
-            outcome.lastElementChild.textContent = ""
+            buttons.forEach((button) => {button.classList.toggle("hover")});
+            outcome.firstElementChild.textContent = "Oops!"
+            outcome.lastElementChild.textContent = "You lost the game!"
             
             const playAgain = document.querySelector(".play-again > button")
             playAgain.classList.toggle("inactive")
             }
             if (playerScore == 5) {
             buttons.forEach((button) => {button.disabled = true});
-            outcome.firstElementChild.textContent = "Congrats! You won the game!"
-            outcome.lastElementChild.textContent = ""
+            buttons.forEach((button) => {button.classList.toggle("hover")});
+            outcome.firstElementChild.textContent = "Congrats!"
+            outcome.lastElementChild.textContent = "You won the game!"
             const playAgain = document.querySelector(".play-again > button")
             playAgain.classList.toggle("inactive")
             }
