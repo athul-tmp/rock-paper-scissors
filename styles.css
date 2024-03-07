@@ -1,13 +1,15 @@
+/* ---GENERAL--- */
 * {
     margin: 0%;
 }
 
 body {
-    background-color: #C5C5C5;
+    background-color: #696969;
     font-family: "Roboto", sans-serif;
-    color: #3B3B3B;
+    color: #C5C5C5;
 }
 
+/* ---HEADER--- */
 header {
     font-family: "Madimi One", sans-serif;
     color: #C5C5C5;
@@ -19,20 +21,10 @@ header {
     justify-content: center;
     align-items: center;
     font-weight: 600;
+    border-bottom: 3px solid black ;
 }
-.choices button {
-    width: 150px;
-    height: 150px;
-    font-size: 100px;
-    border-radius: 8px;
-    text-decoration: none;
-    background-color: #696969;
-    border: 2px solid black;
-    transition-duration: 0.4s;
-}
-.hover:hover {
-    background-color: #979797; 
-}
+
+/* ---STARTING TEXT--- */
 .text {
     margin-top: 20px;
     display: flex;
@@ -40,6 +32,8 @@ header {
     justify-content: center;
     align-items: center;
 }
+
+/* ---OUTCOME SECTION--- */
 .outcome{
     margin: 25px;
     display: flex;
@@ -48,6 +42,7 @@ header {
     align-items: center;
     gap: 150px;
 }
+
 .user {
     display: flex;
     flex-direction: column;
@@ -61,12 +56,16 @@ header {
     justify-content: center;
     align-items: center;
 }
+
 .choice-text {
     padding: 0px 25px 25px 25px;
 }
+
 .score {
     padding: 25px 25px 25px 0px;
 }
+
+/* ---DISPLAYED CHOICE--- */
 .choice {
     display: flex;
     justify-content: center;
@@ -76,32 +75,53 @@ header {
     width: 110px;
     font-family: "Play", sans-serif;
     font-size: 80px;
-    border: 2px solid black;
+    border: 4px solid black;
     border-radius: 8px;
-    background-color: #525252;
+    background-color: #3B3B3B;
     color: #C5C5C5;
 }
+/* ---ROCK PAPER SCISSORS CHOICES--- */
+.choices button {
+    width: 150px;
+    height: 150px;
+    font-size: 100px;
+    border-radius: 8px;
+    text-decoration: none;
+    background-color: #525252;
+    border: 4px solid black;
+    transition-duration: 0.4s;
+}
+
+.hover:hover {
+    background-color: #979797; 
+}
+
 .choices {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 60px;
 }
+
 .choices img {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-left: 10px;
 }
+
+/* ---PLAY AGAIN BUTTON--- */
 .play-again {
     margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .inactive{
     visibility: hidden;
 }
+
 .play-again button {
     padding: 8px 16px 8px 16px;
     border-radius: 8px;
@@ -111,20 +131,25 @@ header {
     font-size: 20px;
     background-color: #525252;
     color: #C5C5C5;
-    border: 2px solid black;
+    border: 4px solid black;
     
 }
+
 .play-again button:hover {
     background-color: #979797;
     color: #525252;
 }
+
 .play-again a {
     text-decoration: none;
     outline: none;
     color: inherit;
 }
+
+/* ---FOOTER--- */
 footer {
     background-color: #3B3B3B;
+    border-top: 3px solid black ;
     color: #C5C5C5;
     display: flex;
     position: fixed;
